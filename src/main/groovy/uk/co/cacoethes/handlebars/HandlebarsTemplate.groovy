@@ -17,7 +17,7 @@ class HandlebarsTemplate implements Template {
 
     @Override
     Writable make() {
-        make [:]
+        make([:])
     }
 
     @Override
