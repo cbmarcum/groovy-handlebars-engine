@@ -1,0 +1,57 @@
+# Generated with JReleaser 1.21.0 at 2025-11-05T18:29:54.767737-05:00
+project:
+  name: groovy-handlebars-engine
+  version: 0.3.0-SNAPSHOT
+  description: A Handlebars template engine for Apache Groovy.
+  longDescription: A Handlebars template engine for Apache Groovy based on the Handlebars-Java library.
+  authors:
+    - Carl Marcum
+  license: Apache-2.0
+  links:
+    homepage: https://github.com/cbmarcum/groovy-handlebars-engine
+  languages:
+    java:
+      groupId: net.codebuilders
+      version: 17
+  inceptionYear: 2025
+
+release:
+  github:
+    owner: cbmarcum
+    overwrite: true
+    sign: false
+    # discussionCategoryName: 'Announcements'
+    changelog:
+      formatted: 'ALWAYS'
+      preset: 'conventional-commits'
+      contributors:
+        format: '- {{contributorName}}{{#contributorUsernameAsLink}} ({{.}}){{/contributorUsernameAsLink}}'
+      # skipMergeCommits: true
+      # using this instead
+      hide:
+        categories:
+          - 'merge'
+
+signing:
+  active: NEVER
+  armored: true
+
+deploy:
+  maven:
+    mavenCentral:
+      release-deploy:
+        active: RELEASE
+        url: https://central.sonatype.com/api/v1/publisher
+        stagingRepositories:
+          - build/repo
+        sign: false
+    nexus2:
+      snapshot-deploy:
+        active: SNAPSHOT
+        snapshotUrl: https://central.sonatype.com/repository/maven-snapshots/
+        applyMavenCentralRules: true
+        snapshotSupported: true
+        closeRepository: true
+        releaseRepository: false
+        stagingRepositories:
+          - build/repo
