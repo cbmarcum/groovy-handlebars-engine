@@ -1,8 +1,8 @@
 # Handlebars Template Engine for Groovy
 
-[Groovy](http://www.groovy-lang.org/) provides a set of interfaces for templating engines: Template and TemplateEngine.
+[Apache Groovy](http://groovy.apache.org/) provides a set of interfaces for templating engines: Template and TemplateEngine.
 This library provides implementations of those interfaces based on [Handlebars](http://handlebarsjs.com/) using the [Handlbars-Java](http://jknack.github.io/handlebars.java/) library.
-If you wish to use this library, you need either the `groovy-all` or `groovy-templates` JARs on your classpath.
+If you wish to use this library, you need the `groovy-templates` JAR on your classpath.
 
 The initial implementation was contributed by [Andy Duncan](https://github.com/andyjduncan) to the [Lazybones](https://github.com/pledbrook/lazybones) project.
 
